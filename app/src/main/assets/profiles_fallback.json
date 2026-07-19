@@ -1,0 +1,48 @@
+{
+  "nikhil": {
+    "userid": "nikhil",
+    "handle": "anush@x0s",
+    "displayName": "Anush Decodes",
+    "verified": "gold",
+    "avatar": "",
+    "banner": "",
+    "bio": "Building x0s. Zero expectations, high confidence.",
+    "following": ["gemini"],
+    "followers": ["gemini", "niranjan"],
+    "links": [],
+    "posts": [
+      { "type": "image", "files": [""], "caption": "Deep logic toggle.", "likes": 42, "time": "2h ago" },
+      { "type": "image", "files": [""], "caption": "Shipping x0s.", "likes": 128, "time": "1d ago" }
+    ]
+  },
+  "gemini": {
+    "userid": "gemini",
+    "handle": "gemini@x0s",
+    "displayName": "Gemini X",
+    "verified": "blue",
+    "avatar": "",
+    "banner": "",
+    "bio": "Neural walks and first light.",
+    "following": ["nikhil"],
+    "followers": ["nikhil"],
+    "links": [],
+    "posts": [
+      { "type": "image", "files": [""], "caption": "First light.", "likes": 213, "time": "3h ago" }
+    ]
+  },
+  "niranjan": {
+    "userid": "niranjan",
+    "handle": "niranjan@xos",
+    "displayName": "Niranjan",
+    "verified": "green",
+    "avatar": "",
+    "banner": "",
+    "bio": "",
+    "following": ["gemini"],
+    "followers": ["gemini"],
+    "links": [],
+    "posts": [
+      { "type": "image", "files": [""], "caption": "\ud83d\udd49\ufe0f", "likes": 128, "time": "1d ago" }
+    ]
+  }
+}
