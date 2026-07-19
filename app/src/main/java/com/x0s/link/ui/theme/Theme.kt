@@ -43,7 +43,6 @@ private val XosLightColorScheme = lightColorScheme(
 
 // ... rest of the file
 
-private val Color_White = androidx.compose.ui.graphics.Color(0xFFFFFFFF)
 
 /**
  * [darkTheme] defaults to the system setting but is overridden by the in-app "Appearance"
