@@ -11,6 +11,8 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
+private val Color_White = androidx.compose.ui.graphics.Color(0xFFFFFFFF)
+
 private val XosDarkColorScheme = darkColorScheme(
     primary = XosAccent,
     onPrimary = Color_White,
@@ -38,6 +40,8 @@ private val XosLightColorScheme = lightColorScheme(
     outline = XosBorderLight,
     error = ErrorRed
 )
+
+// ... rest of the file
 
 private val Color_White = androidx.compose.ui.graphics.Color(0xFFFFFFFF)
 
