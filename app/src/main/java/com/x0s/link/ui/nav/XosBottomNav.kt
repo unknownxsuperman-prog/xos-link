@@ -43,67 +43,79 @@ fun XosBottomNav(
     val activeColor = if (darkTheme) Color.White else Color.Black
     val mutedColor = Color(0xFF666666)
 
-    Row(
+    Box(
         modifier = modifier
             .fillMaxWidth()
             .background(barBg)
-            .drawTopBorder(borderColor)
             .navigationBarsPadding()
             .height(62.dp)
-            .padding(horizontal = 4.dp),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceAround
+            .padding(horizontal = 4.dp)
     ) {
-        NavIcon(
-            selected = currentRoute == Dest.FEED,
-            filled = Icons.Filled.Home,
-            outlined = Icons.Outlined.Home,
-            activeColor = activeColor,
-            mutedColor = mutedColor,
-            onClick = { onNavigate(Dest.FEED) }
+        // hairline top border
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(1.dp)
+                .background(borderColor)
+                .align(Alignment.TopCenter)
         )
-        NavIcon(
-            selected = currentRoute == Dest.SEARCH,
-            filled = Icons.Filled.Search,
-            outlined = Icons.Outlined.Search,
-            activeColor = activeColor,
-            mutedColor = mutedColor,
-            onClick = { onNavigate(Dest.SEARCH) }
-        )
-        NavIcon(
-            selected = currentRoute == Dest.ZYNX,
-            filled = Icons.Filled.PlayCircle,
-            outlined = Icons.Outlined.PlayCircle,
-            activeColor = activeColor,
-            mutedColor = mutedColor,
-            onClick = { onNavigate(Dest.ZYNX) }
-        )
-        NavIcon(
-            selected = currentRoute == Dest.MESSAGES,
-            filled = Icons.Filled.Send,
-            outlined = Icons.Outlined.Send,
-            activeColor = activeColor,
-            mutedColor = mutedColor,
-            onClick = { onNavigate(Dest.MESSAGES) }
-        )
-        Box {
+
+        Row(
+            modifier = Modifier.fillMaxSize(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceAround
+        ) {
             NavIcon(
-                selected = currentRoute == Dest.NOTIFICATIONS,
-                filled = Icons.Filled.Notifications,
-                outlined = Icons.Outlined.Notifications,
+                selected = currentRoute == Dest.FEED,
+                filled = Icons.Filled.Home,
+                outlined = Icons.Outlined.Home,
                 activeColor = activeColor,
                 mutedColor = mutedColor,
-                onClick = { onNavigate(Dest.NOTIFICATIONS) }
+                onClick = { onNavigate(Dest.FEED) }
             )
-            if (hasUnreadNotifications) {
-                Box(
-                    Modifier
-                        .align(Alignment.TopEnd)
-                        .padding(top = 4.dp, end = 10.dp)
-                        .size(7.dp)
-                        .clip(CircleShape)
-                        .background(Color(0xFFFF3B5C))
+            NavIcon(
+                selected = currentRoute == Dest.SEARCH,
+                filled = Icons.Filled.Search,
+                outlined = Icons.Outlined.Search,
+                activeColor = activeColor,
+                mutedColor = mutedColor,
+                onClick = { onNavigate(Dest.SEARCH) }
+            )
+            NavIcon(
+                selected = currentRoute == Dest.ZYNX,
+                filled = Icons.Filled.PlayCircle,
+                outlined = Icons.Outlined.PlayCircle,
+                activeColor = activeColor,
+                mutedColor = mutedColor,
+                onClick = { onNavigate(Dest.ZYNX) }
+            )
+            NavIcon(
+                selected = currentRoute == Dest.MESSAGES,
+                filled = Icons.Filled.Send,
+                outlined = Icons.Outlined.Send,
+                activeColor = activeColor,
+                mutedColor = mutedColor,
+                onClick = { onNavigate(Dest.MESSAGES) }
+            )
+            Box {
+                NavIcon(
+                    selected = currentRoute == Dest.NOTIFICATIONS,
+                    filled = Icons.Filled.Notifications,
+                    outlined = Icons.Outlined.Notifications,
+                    activeColor = activeColor,
+                    mutedColor = mutedColor,
+                    onClick = { onNavigate(Dest.NOTIFICATIONS) }
                 )
+                if (hasUnreadNotifications) {
+                    Box(
+                        Modifier
+                            .align(Alignment.TopEnd)
+                            .padding(top = 4.dp, end = 10.dp)
+                            .size(7.dp)
+                            .clip(CircleShape)
+                            .background(Color(0xFFFF3B5C))
+                    )
+                }
             }
         }
     }
@@ -132,15 +144,3 @@ private fun NavIcon(
         )
     }
 }
-
-private fun Modifier.drawTopBorder(color: Color): Modifier = this.then(
-    androidx.compose.ui.draw.drawWithContent {
-        drawContent()
-        drawLine(
-            color = color,
-            start = androidx.compose.ui.geometry.Offset(0f, 0f),
-            end = androidx.compose.ui.geometry.Offset(size.width, 0f),
-            strokeWidth = 1f
-        )
-    }
-)
