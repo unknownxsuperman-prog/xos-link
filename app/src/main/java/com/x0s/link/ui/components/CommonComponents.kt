@@ -55,7 +55,7 @@ fun VerifiedBadge(type: String?, size: Dp = 14.dp, modifier: Modifier = Modifier
 
     val period = when (type) { "gold" -> 2500; else -> 2800 }
     val transition = rememberInfiniteTransition(label = "badgePulse")
-    val glow by transition.animateFloat(
+    val glowState = transition.animateFloat(
         initialValue = 0.15f,
         targetValue = 0.55f,
         animationSpec = infiniteRepeatable(
@@ -64,6 +64,7 @@ fun VerifiedBadge(type: String?, size: Dp = 14.dp, modifier: Modifier = Modifier
         ),
         label = "glowAlpha"
     )
+    val glow = glowState.value
 
     Box(modifier = modifier.size(size * 1.9f), contentAlignment = Alignment.Center) {
         androidx.compose.foundation.Canvas(Modifier.size(size * 1.9f)) {
