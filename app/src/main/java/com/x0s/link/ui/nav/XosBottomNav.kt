@@ -134,7 +134,8 @@ private fun NavIcon(
 }
 
 private fun Modifier.drawTopBorder(color: Color): Modifier = this.then(
-    androidx.compose.ui.draw.drawBehind {
+    androidx.compose.ui.draw.drawWithContent {
+        drawContent()
         drawLine(
             color = color,
             start = androidx.compose.ui.geometry.Offset(0f, 0f),
