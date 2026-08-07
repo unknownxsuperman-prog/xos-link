@@ -1,5 +1,6 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="100%" viewBox="0 0 1024 1024" enable-background="new 0 0 1024 1024" xml:space="preserve">
+<rect width="100%" height="100%" fill="#FFFFFF"/>
 <path fill="#000000" opacity="1.000000" stroke="none" 
 	d="
 M523.295227,639.722290 
@@ -81,7 +82,7 @@ M650.831177,344.194397
 	C623.013184,309.076721 625.367188,309.534363 628.559692,312.541412 
 	C638.078552,321.507385 644.125732,332.846436 650.831177,344.194397 
 z"/>
-<path fill="#000000" opacity="1.000000" stroke="none" 
+<path fill="#D71921" opacity="1.000000" stroke="none" 
 	d="
 M749.341980,344.399231 
 	C719.861572,365.796173 681.578674,354.424194 669.140625,320.726929 
